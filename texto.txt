@@ -1,0 +1,72 @@
+<!-- Controles$
+
+Contenedor contLogin;
+Contenedor contFondo;
+Boton cmdIngresar;
+Clave pswClave;
+Etiqueta passw;
+Etiqueta nombre;
+Texto Texto0;
+Contenedor ContLogo1;
+Contenedor ContLogo2;
+Contenedor ContBody;
+
+
+Controles -->
+
+<!-- Propiedades 
+
+
+/* Ejemplo
+    de
+    comentario
+    multiple
+*/
+
+// Inicio de contLogin
+contLogin.setAncho(190);
+contLogin.setAlto(150);
+contLogin.setColorFondo(47,79,79);
+
+// Inicio de contFondo
+contFondo.setAncho(800);
+contFondo.setAlto(100);
+contFondo.setColorFondo(64,64,64);
+
+// Inicio de cmdIngresar
+cmdIngresar.setTexto("Ingresar");
+
+// Inicio de pswClave
+pswClave.setTexto("");
+
+// Inicio etiqueta passw
+passw.setAncho(53);
+passw.setAlto(13 );
+passw.setColorLetra(128,128,128);
+passw.setTexto("Password");
+
+// Inicio etiqueta Nombre
+Nombre.setAncho(44);
+Nombre.setAlto(13);
+Nombre.setColorLetra(128,128,128);
+Nombre.setTexto("Nombre");
+
+// Inicio de Texto0
+Texto0.setTexto("");
+
+// Inicio de ContLogo2
+ContLogo2.setAncho(150);
+ContLogo2.setAlto( 50);
+ContLogo2.setColorFondo(0,128,128);
+
+// Inicio de ContLogo1
+ContLogo1.setAncho(50);
+ContLogo1.setAlto( 50);
+ContLogo1.setColorFondo(64,64,64);
+
+// Inicio de ContBody
+ContBody.setAncho(800);
+ContBody.setAlto(300);
+ContBody.setColorFondo(64,224,208);
+
+Propiedades -->
