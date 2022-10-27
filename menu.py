@@ -5,7 +5,7 @@ from tkinter.font import Font
 import webbrowser as wb
 import math
 
-from Analizador_Sintactico import parse,errores_
+from Analizador_Sintactico import parse,errores_,lista_objetos_tokens
 from Analizador_Lexico import actualizar_entrada
 #from analizador import parse,errores_,actualizar_entrada
 
@@ -78,15 +78,21 @@ def Archivo():
     btnEliminar.place(x=450,y=450)
     def analizar():
         errores_.clear()
+        lista_objetos_tokens.clear()
         actualizar_entrada(entry.get(1.0,"end"))
         variable =parse(entry.get(1.0,"end"))
         for error in errores_:
             print(error.toString())
+
+        for token in lista_objetos_tokens:
+            print(token.toString())    
         #actualizar_texto(entry.get(1.0,"end"))
     btnEliminar=tkinter.Button(gestionar,text="Analizar",command=analizar)
-    btnEliminar.place(x=750,y=450)
+    btnEliminar.place(x=720,y=450)
     btnEliminar=tkinter.Button(gestionar,text="errores",command=generar_repo)
     btnEliminar.place(x=550,y=450)
+    btnEliminar=tkinter.Button(gestionar,text="Tabla de Tokens",command=generar_tabla_tokens)
+    btnEliminar.place(x=800,y=450)
 
     def funcion_regresar_gestionar_principal():
         principal.deiconify()
@@ -94,6 +100,38 @@ def Archivo():
     Regresar=tkinter.Button(gestionar,text="Regresar",command=funcion_regresar_gestionar_principal)
     Regresar.place(x=650,y=450)    
 
+def generar_tabla_tokens():
+    f = filedialog.asksaveasfile(mode='w', defaultextension=".html")
+    cabecera='''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tabla de Tokens</title>
+    <link rel="Stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+<table class="default" border="1">
+  <tr>
+    <th>No.</th>
+    <th>Token</th>
+    <th>Lexema</th>
+  </tr>  
+'''
+    cuerpo=''''''
+    for i in range(len(lista_objetos_tokens)):
+        cuerpo+='''  <tr>
+    <th>'''+str(i+1)+'''</th>
+    <th>'''+lista_objetos_tokens[i].token+'''</th>
+    <th>'''+lista_objetos_tokens[i].lexema+'''</th>
+  </tr>'''
+
+    pie='''
+    </table>
+</body>
+</html>'''
+    if (f):
+        f.write(cabecera+cuerpo+pie)
+        f.close ()
+        messagebox.showinfo("Aviso","Archivo Generado por favor revise su carpeta")
 
 
 def generar_repo():

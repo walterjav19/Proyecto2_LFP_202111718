@@ -1,11 +1,11 @@
-<!-- Controles$
+<!-- Controles
 
 Contenedor contLogin;
 Contenedor contFondo;
 Boton cmdIngresar;
 Clave pswClave;
 Etiqueta passw;
-Etiqueta nombre;
+Etiqueta Nombre;
 Texto Texto0;
 Contenedor ContLogo1;
 Contenedor ContLogo2;
@@ -27,6 +27,7 @@ Controles -->
 contLogin.setAncho(190);
 contLogin.setAlto(150);
 contLogin.setColorFondo(47,79,79);
+
 
 // Inicio de contFondo
 contFondo.setAncho(800);
@@ -70,3 +71,5 @@ ContBody.setAlto(300);
 ContBody.setColorFondo(64,224,208);
 
 Propiedades -->
+
+

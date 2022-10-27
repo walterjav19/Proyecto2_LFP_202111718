@@ -94,11 +94,13 @@ def t_ID(t):
 def t_Com_Simple(t):
     r'\/\/.*\n'
     t.lexer.lineno += 1
+    
 
 #Comentario Multilinea
 def t_Com_Multiple(t):
     r'\/\*(.|\n)*?\*\/'
     t.lexer.lineno += t.value.count('\n')
+    
 
 
 # Esta función cuando lee un salto de línea lo agrega al analizador para 
