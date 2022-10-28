@@ -8,7 +8,7 @@ import ply.lex as lex
 reserved = {
     'Controles'        : 'RCONTROLES',
     'Propiedades'      : 'RPROPIEDADES',
-    # 'Colocacion'       : 'RCOLOCACION',
+    'Colocacion'       : 'RCOLOCACION',
     'Etiqueta'         : 'RETIQUETA',
     'Boton'            : 'RBOTON',
     'Check'            : 'RCHECK',

@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'CADENA COMA DECIMAL ENTERO EXCLAMACION GUION ID LLAA LLAC PARA PARC PTCOMA PUNTO RAREATEXTO RBOTON RCHECK RCLAVE RCONTENEDOR RCONTROLES RETIQUETA RPROPIEDADES RRADIOBOTON RTEXTOinit : instruccionesinstrucciones    : instrucciones instruccioninstrucciones : instruccioninstruccion : LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC\n                    | LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC\n                    controles    : controles controlcontroles : controlcontrol : RETIQUETA ID PTCOMA\n                | RBOTON ID PTCOMA\n                | RCHECK ID PTCOMA\n                | RRADIOBOTON ID PTCOMA\n                | RTEXTO ID PTCOMA\n                | RAREATEXTO ID PTCOMA\n                | RCLAVE ID PTCOMA\n                | RCONTENEDOR ID PTCOMA\n                propiedades    : propiedades propiedadpropiedades : propiedadpropiedad : ID PUNTO ID PARA parametros PARC PTCOMA\n                parametros : parametros COMA parametroparametros : parametroparametro : expresionexpresion : ENTERO\n    expresion : DECIMAL\n    expresion : CADENA\n    expresion : ID\n    '
+_lr_signature = 'CADENA COMA DECIMAL ENTERO EXCLAMACION GUION ID LLAA LLAC PARA PARC PTCOMA PUNTO RAREATEXTO RBOTON RCHECK RCLAVE RCOLOCACION RCONTENEDOR RCONTROLES RETIQUETA RPROPIEDADES RRADIOBOTON RTEXTOinit : instruccionesinstrucciones    : instrucciones instruccioninstrucciones : instruccioninstruccion : LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC\n                    | LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC\n                    | LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC\n                    controles    : controles controlcontroles : controlcontrol : RETIQUETA ID PTCOMA\n                | RBOTON ID PTCOMA\n                | RCHECK ID PTCOMA\n                | RRADIOBOTON ID PTCOMA\n                | RTEXTO ID PTCOMA\n                | RAREATEXTO ID PTCOMA\n                | RCLAVE ID PTCOMA\n                | RCONTENEDOR ID PTCOMA\n                propiedades    : propiedades propiedadpropiedades : propiedadpropiedad : ID PUNTO ID PARA parametros PARC PTCOMA\n                colocaciones    : colocaciones colocacioncolocaciones : colocacioncolocacion : ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA\n                 parametros : parametros COMA parametroparametros : parametroparametro : expresionexpresion : ENTERO\n    expresion : DECIMAL\n    expresion : CADENA\n    expresion : ID\n    '
     
-_lr_action_items = {'LLAA':([0,2,3,5,51,52,],[4,4,-3,-2,-4,-5,]),'$end':([1,2,3,5,51,52,],[0,-1,-3,-2,-4,-5,]),'EXCLAMACION':([4,],[6,]),'GUION':([6,7,24,34,37,46,],[7,8,37,46,48,49,]),'RCONTROLES':([8,11,12,25,38,39,40,41,42,43,44,45,],[9,24,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RPROPIEDADES':([8,21,22,35,62,],[10,34,-17,-16,-18,]),'RETIQUETA':([9,11,12,25,38,39,40,41,42,43,44,45,],[13,13,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RBOTON':([9,11,12,25,38,39,40,41,42,43,44,45,],[14,14,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RCHECK':([9,11,12,25,38,39,40,41,42,43,44,45,],[15,15,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RRADIOBOTON':([9,11,12,25,38,39,40,41,42,43,44,45,],[16,16,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RTEXTO':([9,11,12,25,38,39,40,41,42,43,44,45,],[17,17,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RAREATEXTO':([9,11,12,25,38,39,40,41,42,43,44,45,],[18,18,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RCLAVE':([9,11,12,25,38,39,40,41,42,43,44,45,],[19,19,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'RCONTENEDOR':([9,11,12,25,38,39,40,41,42,43,44,45,],[20,20,-7,-6,-8,-9,-10,-11,-12,-13,-14,-15,]),'ID':([10,13,14,15,16,17,18,19,20,21,22,35,36,50,61,62,],[23,26,27,28,29,30,31,32,33,23,-17,-16,47,53,53,-18,]),'PUNTO':([23,],[36,]),'PTCOMA':([26,27,28,29,30,31,32,33,60,],[38,39,40,41,42,43,44,45,62,]),'PARA':([47,],[50,]),'LLAC':([48,49,],[51,52,]),'ENTERO':([50,61,],[57,57,]),'DECIMAL':([50,61,],[58,58,]),'CADENA':([50,61,],[59,59,]),'PARC':([53,54,55,56,57,58,59,63,],[-25,60,-20,-21,-22,-23,-24,-19,]),'COMA':([53,54,55,56,57,58,59,63,],[-25,61,-20,-21,-22,-23,-24,-19,]),}
+_lr_action_items = {'LLAA':([0,2,3,5,62,63,71,],[4,4,-3,-2,-4,-5,-6,]),'$end':([1,2,3,5,62,63,71,],[0,-1,-3,-2,-4,-5,-6,]),'EXCLAMACION':([4,],[6,]),'GUION':([6,7,28,38,41,44,53,55,],[7,8,44,53,55,57,58,60,]),'RCONTROLES':([8,12,13,29,45,46,47,48,49,50,51,52,],[9,28,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RPROPIEDADES':([8,22,23,39,76,],[10,38,-18,-17,-19,]),'RCOLOCACION':([8,25,26,42,85,],[11,41,-21,-20,-22,]),'RETIQUETA':([9,12,13,29,45,46,47,48,49,50,51,52,],[14,14,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RBOTON':([9,12,13,29,45,46,47,48,49,50,51,52,],[15,15,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RCHECK':([9,12,13,29,45,46,47,48,49,50,51,52,],[16,16,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RRADIOBOTON':([9,12,13,29,45,46,47,48,49,50,51,52,],[17,17,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RTEXTO':([9,12,13,29,45,46,47,48,49,50,51,52,],[18,18,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RAREATEXTO':([9,12,13,29,45,46,47,48,49,50,51,52,],[19,19,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RCLAVE':([9,12,13,29,45,46,47,48,49,50,51,52,],[20,20,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'RCONTENEDOR':([9,12,13,29,45,46,47,48,49,50,51,52,],[21,21,-8,-7,-9,-10,-11,-12,-13,-14,-15,-16,]),'ID':([10,11,14,15,16,17,18,19,20,21,22,23,25,26,39,40,42,43,59,61,74,76,78,80,82,85,],[24,27,30,31,32,33,34,35,36,37,24,-18,27,-21,-17,54,-20,56,64,64,64,-19,79,81,64,-22,]),'PUNTO':([24,27,79,],[40,43,80,]),'PTCOMA':([30,31,32,33,34,35,36,37,73,75,84,],[45,46,47,48,49,50,51,52,76,78,85,]),'PARA':([54,56,81,],[59,61,82,]),'LLAC':([57,58,60,],[62,63,71,]),'ENTERO':([59,61,74,82,],[68,68,68,68,]),'DECIMAL':([59,61,74,82,],[69,69,69,69,]),'CADENA':([59,61,74,82,],[70,70,70,70,]),'PARC':([64,65,66,67,68,69,70,72,77,83,],[-29,73,-24,-25,-26,-27,-28,75,-23,84,]),'COMA':([64,65,66,67,68,69,70,72,77,83,],[-29,74,-24,-25,-26,-27,-28,74,-23,74,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'init':([0,],[1,]),'instrucciones':([0,],[2,]),'instruccion':([0,2,],[3,5,]),'controles':([9,],[11,]),'control':([9,11,],[12,25,]),'propiedades':([10,],[21,]),'propiedad':([10,21,],[22,35,]),'parametros':([50,],[54,]),'parametro':([50,61,],[55,63,]),'expresion':([50,61,],[56,56,]),}
+_lr_goto_items = {'init':([0,],[1,]),'instrucciones':([0,],[2,]),'instruccion':([0,2,],[3,5,]),'controles':([9,],[12,]),'control':([9,12,],[13,29,]),'propiedades':([10,],[22,]),'propiedad':([10,22,],[23,39,]),'colocaciones':([11,],[25,]),'colocacion':([11,25,],[26,42,]),'parametros':([59,61,82,],[65,72,83,]),'parametro':([59,61,74,82,],[66,66,77,66,]),'expresion':([59,61,74,82,],[67,67,67,67,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -32,24 +32,28 @@ _lr_productions = [
   ('instrucciones -> instruccion','instrucciones',1,'p_instrucciones_2','Analizador_Sintactico.py',31),
   ('instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC','instruccion',10,'p_instrucciones_evaluar','Analizador_Sintactico.py',38),
   ('instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC','instruccion',10,'p_instrucciones_evaluar','Analizador_Sintactico.py',39),
-  ('controles -> controles control','controles',2,'p_controles_lista','Analizador_Sintactico.py',69),
-  ('controles -> control','controles',1,'p_controles_2','Analizador_Sintactico.py',75),
-  ('control -> RETIQUETA ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',90),
-  ('control -> RBOTON ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',91),
-  ('control -> RCHECK ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',92),
-  ('control -> RRADIOBOTON ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',93),
-  ('control -> RTEXTO ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',94),
-  ('control -> RAREATEXTO ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',95),
-  ('control -> RCLAVE ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',96),
-  ('control -> RCONTENEDOR ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',97),
-  ('propiedades -> propiedades propiedad','propiedades',2,'p_propiedades_lista','Analizador_Sintactico.py',158),
-  ('propiedades -> propiedad','propiedades',1,'p_propiedades_2','Analizador_Sintactico.py',164),
-  ('propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA','propiedad',7,'p_instrucciones_propiedades','Analizador_Sintactico.py',176),
-  ('parametros -> parametros COMA parametro','parametros',3,'p_parametros_lista','Analizador_Sintactico.py',276),
-  ('parametros -> parametro','parametros',1,'p_parametros_2','Analizador_Sintactico.py',283),
-  ('parametro -> expresion','parametro',1,'p_parametro','Analizador_Sintactico.py',287),
-  ('expresion -> ENTERO','expresion',1,'p_expresion_entero','Analizador_Sintactico.py',291),
-  ('expresion -> DECIMAL','expresion',1,'p_expresion_decimal','Analizador_Sintactico.py',296),
-  ('expresion -> CADENA','expresion',1,'p_expresion_cadena','Analizador_Sintactico.py',301),
-  ('expresion -> ID','expresion',1,'p_expresion_ID','Analizador_Sintactico.py',306),
+  ('instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC','instruccion',10,'p_instrucciones_evaluar','Analizador_Sintactico.py',40),
+  ('controles -> controles control','controles',2,'p_controles_lista','Analizador_Sintactico.py',70),
+  ('controles -> control','controles',1,'p_controles_2','Analizador_Sintactico.py',76),
+  ('control -> RETIQUETA ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',91),
+  ('control -> RBOTON ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',92),
+  ('control -> RCHECK ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',93),
+  ('control -> RRADIOBOTON ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',94),
+  ('control -> RTEXTO ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',95),
+  ('control -> RAREATEXTO ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',96),
+  ('control -> RCLAVE ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',97),
+  ('control -> RCONTENEDOR ID PTCOMA','control',3,'p_instrucciones_controles','Analizador_Sintactico.py',98),
+  ('propiedades -> propiedades propiedad','propiedades',2,'p_propiedades_lista','Analizador_Sintactico.py',159),
+  ('propiedades -> propiedad','propiedades',1,'p_propiedades_2','Analizador_Sintactico.py',165),
+  ('propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA','propiedad',7,'p_instrucciones_propiedades','Analizador_Sintactico.py',179),
+  ('colocaciones -> colocaciones colocacion','colocaciones',2,'p_colocaciones_lista','Analizador_Sintactico.py',328),
+  ('colocaciones -> colocacion','colocaciones',1,'p_colocaciones_2','Analizador_Sintactico.py',334),
+  ('colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA','colocacion',14,'p_instrucciones_colocaciones','Analizador_Sintactico.py',342),
+  ('parametros -> parametros COMA parametro','parametros',3,'p_parametros_lista','Analizador_Sintactico.py',354),
+  ('parametros -> parametro','parametros',1,'p_parametros_2','Analizador_Sintactico.py',361),
+  ('parametro -> expresion','parametro',1,'p_parametro','Analizador_Sintactico.py',365),
+  ('expresion -> ENTERO','expresion',1,'p_expresion_entero','Analizador_Sintactico.py',369),
+  ('expresion -> DECIMAL','expresion',1,'p_expresion_decimal','Analizador_Sintactico.py',374),
+  ('expresion -> CADENA','expresion',1,'p_expresion_cadena','Analizador_Sintactico.py',379),
+  ('expresion -> ID','expresion',1,'p_expresion_ID','Analizador_Sintactico.py',384),
 ]

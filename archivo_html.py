@@ -107,6 +107,19 @@ class Etiqueta:
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
     } 
     '''
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    color: rgb('''+str(self.Co_r)+''','''+str(self.Co_g)+''','''+str(self.Co_b)+''');
+    background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    } 
+    '''
 
     def set_Texto(self,Texto):
         self.Texto=Texto
@@ -147,6 +160,17 @@ class Boton:
         self.etiqueta=f'<input type="submit" id="{self.id}" value="{self.Texto}" style="text-align:{self.Text_Align};" />' 
 
     def iniciar_clase(self):
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    } 
+    '''
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
         self.clase='''#'''+self.id+'''{
     position:absolute;
     top :'''+str(self.top)+'''px; 
@@ -198,7 +222,17 @@ class Check:
     height:'''+str(self.Alto)+'''px;
     } 
     '''
-
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    } 
+    '''
 
 class RadioBoton:
     clase=""
@@ -242,6 +276,17 @@ class RadioBoton:
     height:'''+str(self.Alto)+'''px;
     }'''
 
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    } 
+    '''
 
 class Texto:
     clase=""
@@ -274,6 +319,17 @@ class Texto:
     height:'''+str(self.Alto)+'''px;
     } 
     '''
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    } 
+    '''    
 
 class AreaTexto:
     clase=""
@@ -301,6 +357,19 @@ class AreaTexto:
     height:'''+str(self.Alto)+'''px;
     } 
     '''     
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    } 
+    '''
+
+
 
 class Clave:
     clase=""
@@ -334,6 +403,18 @@ class Clave:
     height:'''+str(self.Alto)+'''px;
     } 
     '''
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    } 
+    '''
+
 
 class Contendor:
     clase=""
@@ -382,6 +463,19 @@ class Contendor:
         self.bg_r=str(r)
         self.bg_g=str(g)
         self.bg_b=str(b)
+        self.clase='''#'''+self.id+'''{
+    position:absolute;
+    top :'''+str(self.top)+'''px; 
+    left:'''+str(self.left)+'''px; 
+    width:'''+str(self.Ancho)+'''px;
+    height:'''+str(self.Alto)+'''px;
+    background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    } 
+    '''
+
+    def set_Posicion(self,left,top):
+        self.left=str(left)
+        self.top=str(top)
         self.clase='''#'''+self.id+'''{
     position:absolute;
     top :'''+str(self.top)+'''px; 

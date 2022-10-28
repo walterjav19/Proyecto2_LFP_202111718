@@ -37,6 +37,7 @@ def p_instrucciones_2(t):
 def p_instrucciones_evaluar(t):
     '''instruccion : LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC
                     | LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
+                    | LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
                     '''
     a=Token('LLAA',t[1])
     lista_objetos_tokens.append(a)
@@ -172,6 +173,8 @@ def encontrar_componente(id):
     for comp in componentes:
         if comp.id==id:
             return comp
+
+
 def p_instrucciones_propiedades(t):
     '''propiedad : ID PUNTO ID PARA parametros PARC PTCOMA
                 '''
@@ -319,6 +322,44 @@ def p_instrucciones_propiedades(t):
 
 
     t[0] = t[1]
+
+
+def p_colocaciones_lista(t):
+    'colocaciones    : colocaciones colocacion'
+    if t[2] != "":
+        t[1].append(t[2])
+    t[0] = t[1]
+
+def p_colocaciones_2(t):
+    'colocaciones : colocacion'
+    if t[1] == "":
+        t[0] = []
+    else:
+        t[0] = [t[1]]
+
+
+def p_instrucciones_colocaciones(t):
+    '''colocacion : ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+                 '''
+    #print('ID: ', t[1], ' Propiedad: ', t[3], ' Parametros: ', t[5])             
+    print(t[1],t[2],t[3],t[4],t[6],t[7])
+    print(t[8],t[9],t[10],t[11],t[13],t[14])
+    parametros1=t[5]
+    parametros2=t[12]
+    if encontrar_componente(t[1])==None:
+        objeto_error=Errores(t[1],'Error Sintactico',"N/A",t.lineno(1))
+        errores_.append(objeto_error)
+    else:
+        comp=encontrar_componente(t[1])
+        if t[3] =="setPosicion":
+            #print(t[5][0].valor,t[5][1].valor)
+            comp.set_Posicion(t[5][0].valor,t[5][1].valor)
+        else:
+            objeto_error=Errores(t[1],'Error Sintactico',"N/A",t.lineno(1))
+            errores_.append(objeto_error)              
+
+
+
 
 
 def p_parametros_lista(t):

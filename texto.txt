@@ -74,5 +74,15 @@ ContBody.setColorFondo(64,224,208);
 
 Propiedades -->
 
+<!--Colocacion
+
+contLogin.setPosicion(65,20);
+this.add("hola");
+
+
+Colocacion --> 
+
+
+
 
 

@@ -8,66 +8,73 @@ Rule 2     instrucciones -> instrucciones instruccion
 Rule 3     instrucciones -> instruccion
 Rule 4     instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC
 Rule 5     instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
-Rule 6     controles -> controles control
-Rule 7     controles -> control
-Rule 8     control -> RETIQUETA ID PTCOMA
-Rule 9     control -> RBOTON ID PTCOMA
-Rule 10    control -> RCHECK ID PTCOMA
-Rule 11    control -> RRADIOBOTON ID PTCOMA
-Rule 12    control -> RTEXTO ID PTCOMA
-Rule 13    control -> RAREATEXTO ID PTCOMA
-Rule 14    control -> RCLAVE ID PTCOMA
-Rule 15    control -> RCONTENEDOR ID PTCOMA
-Rule 16    propiedades -> propiedades propiedad
-Rule 17    propiedades -> propiedad
-Rule 18    propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA
-Rule 19    parametros -> parametros COMA parametro
-Rule 20    parametros -> parametro
-Rule 21    parametro -> expresion
-Rule 22    expresion -> ENTERO
-Rule 23    expresion -> DECIMAL
-Rule 24    expresion -> CADENA
-Rule 25    expresion -> ID
+Rule 6     instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
+Rule 7     controles -> controles control
+Rule 8     controles -> control
+Rule 9     control -> RETIQUETA ID PTCOMA
+Rule 10    control -> RBOTON ID PTCOMA
+Rule 11    control -> RCHECK ID PTCOMA
+Rule 12    control -> RRADIOBOTON ID PTCOMA
+Rule 13    control -> RTEXTO ID PTCOMA
+Rule 14    control -> RAREATEXTO ID PTCOMA
+Rule 15    control -> RCLAVE ID PTCOMA
+Rule 16    control -> RCONTENEDOR ID PTCOMA
+Rule 17    propiedades -> propiedades propiedad
+Rule 18    propiedades -> propiedad
+Rule 19    propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA
+Rule 20    colocaciones -> colocaciones colocacion
+Rule 21    colocaciones -> colocacion
+Rule 22    colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+Rule 23    parametros -> parametros COMA parametro
+Rule 24    parametros -> parametro
+Rule 25    parametro -> expresion
+Rule 26    expresion -> ENTERO
+Rule 27    expresion -> DECIMAL
+Rule 28    expresion -> CADENA
+Rule 29    expresion -> ID
 
 Terminals, with rules where they appear
 
-CADENA               : 24
-COMA                 : 19
-DECIMAL              : 23
-ENTERO               : 22
-EXCLAMACION          : 4 5
-GUION                : 4 4 4 4 5 5 5 5
-ID                   : 8 9 10 11 12 13 14 15 18 18 25
-LLAA                 : 4 5
-LLAC                 : 4 5
-PARA                 : 18
-PARC                 : 18
-PTCOMA               : 8 9 10 11 12 13 14 15 18
-PUNTO                : 18
-RAREATEXTO           : 13
-RBOTON               : 9
-RCHECK               : 10
-RCLAVE               : 14
-RCONTENEDOR          : 15
+CADENA               : 28
+COMA                 : 23
+DECIMAL              : 27
+ENTERO               : 26
+EXCLAMACION          : 4 5 6
+GUION                : 4 4 4 4 5 5 5 5 6 6 6 6
+ID                   : 9 10 11 12 13 14 15 16 19 19 22 22 22 22 29
+LLAA                 : 4 5 6
+LLAC                 : 4 5 6
+PARA                 : 19 22 22
+PARC                 : 19 22 22
+PTCOMA               : 9 10 11 12 13 14 15 16 19 22 22
+PUNTO                : 19 22 22
+RAREATEXTO           : 14
+RBOTON               : 10
+RCHECK               : 11
+RCLAVE               : 15
+RCOLOCACION          : 6 6
+RCONTENEDOR          : 16
 RCONTROLES           : 4 4
-RETIQUETA            : 8
+RETIQUETA            : 9
 RPROPIEDADES         : 5 5
-RRADIOBOTON          : 11
-RTEXTO               : 12
+RRADIOBOTON          : 12
+RTEXTO               : 13
 error                : 
 
 Nonterminals, with rules where they appear
 
-control              : 6 7
-controles            : 4 6
-expresion            : 21
+colocacion           : 20 21
+colocaciones         : 6 20
+control              : 7 8
+controles            : 4 7
+expresion            : 25
 init                 : 0
 instruccion          : 2 3
 instrucciones        : 1 2
-parametro            : 19 20
-parametros           : 18 19
-propiedad            : 16 17
-propiedades          : 5 16
+parametro            : 23 24
+parametros           : 19 22 22 23
+propiedad            : 17 18
+propiedades          : 5 17
 
 Parsing method: LALR
 
@@ -79,6 +86,7 @@ state 0
     (3) instrucciones -> . instruccion
     (4) instruccion -> . LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC
     (5) instruccion -> . LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
+    (6) instruccion -> . LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
 
     LLAA            shift and go to state 4
 
@@ -98,6 +106,7 @@ state 2
     (2) instrucciones -> instrucciones . instruccion
     (4) instruccion -> . LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC
     (5) instruccion -> . LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
+    (6) instruccion -> . LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
 
     $end            reduce using rule 1 (init -> instrucciones .)
     LLAA            shift and go to state 4
@@ -116,6 +125,7 @@ state 4
 
     (4) instruccion -> LLAA . EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC
     (5) instruccion -> LLAA . EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
+    (6) instruccion -> LLAA . EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
 
     EXCLAMACION     shift and go to state 6
 
@@ -132,6 +142,7 @@ state 6
 
     (4) instruccion -> LLAA EXCLAMACION . GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC
     (5) instruccion -> LLAA EXCLAMACION . GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
+    (6) instruccion -> LLAA EXCLAMACION . GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
 
     GUION           shift and go to state 7
 
@@ -140,6 +151,7 @@ state 7
 
     (4) instruccion -> LLAA EXCLAMACION GUION . GUION RCONTROLES controles RCONTROLES GUION GUION LLAC
     (5) instruccion -> LLAA EXCLAMACION GUION . GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
+    (6) instruccion -> LLAA EXCLAMACION GUION . GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
 
     GUION           shift and go to state 8
 
@@ -148,447 +160,550 @@ state 8
 
     (4) instruccion -> LLAA EXCLAMACION GUION GUION . RCONTROLES controles RCONTROLES GUION GUION LLAC
     (5) instruccion -> LLAA EXCLAMACION GUION GUION . RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC
+    (6) instruccion -> LLAA EXCLAMACION GUION GUION . RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC
 
     RCONTROLES      shift and go to state 9
     RPROPIEDADES    shift and go to state 10
+    RCOLOCACION     shift and go to state 11
 
 
 state 9
 
     (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES . controles RCONTROLES GUION GUION LLAC
-    (6) controles -> . controles control
-    (7) controles -> . control
-    (8) control -> . RETIQUETA ID PTCOMA
-    (9) control -> . RBOTON ID PTCOMA
-    (10) control -> . RCHECK ID PTCOMA
-    (11) control -> . RRADIOBOTON ID PTCOMA
-    (12) control -> . RTEXTO ID PTCOMA
-    (13) control -> . RAREATEXTO ID PTCOMA
-    (14) control -> . RCLAVE ID PTCOMA
-    (15) control -> . RCONTENEDOR ID PTCOMA
+    (7) controles -> . controles control
+    (8) controles -> . control
+    (9) control -> . RETIQUETA ID PTCOMA
+    (10) control -> . RBOTON ID PTCOMA
+    (11) control -> . RCHECK ID PTCOMA
+    (12) control -> . RRADIOBOTON ID PTCOMA
+    (13) control -> . RTEXTO ID PTCOMA
+    (14) control -> . RAREATEXTO ID PTCOMA
+    (15) control -> . RCLAVE ID PTCOMA
+    (16) control -> . RCONTENEDOR ID PTCOMA
 
-    RETIQUETA       shift and go to state 13
-    RBOTON          shift and go to state 14
-    RCHECK          shift and go to state 15
-    RRADIOBOTON     shift and go to state 16
-    RTEXTO          shift and go to state 17
-    RAREATEXTO      shift and go to state 18
-    RCLAVE          shift and go to state 19
-    RCONTENEDOR     shift and go to state 20
+    RETIQUETA       shift and go to state 14
+    RBOTON          shift and go to state 15
+    RCHECK          shift and go to state 16
+    RRADIOBOTON     shift and go to state 17
+    RTEXTO          shift and go to state 18
+    RAREATEXTO      shift and go to state 19
+    RCLAVE          shift and go to state 20
+    RCONTENEDOR     shift and go to state 21
 
-    controles                      shift and go to state 11
-    control                        shift and go to state 12
+    controles                      shift and go to state 12
+    control                        shift and go to state 13
 
 state 10
 
     (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES . propiedades RPROPIEDADES GUION GUION LLAC
-    (16) propiedades -> . propiedades propiedad
-    (17) propiedades -> . propiedad
-    (18) propiedad -> . ID PUNTO ID PARA parametros PARC PTCOMA
+    (17) propiedades -> . propiedades propiedad
+    (18) propiedades -> . propiedad
+    (19) propiedad -> . ID PUNTO ID PARA parametros PARC PTCOMA
 
-    ID              shift and go to state 23
+    ID              shift and go to state 24
 
-    propiedades                    shift and go to state 21
-    propiedad                      shift and go to state 22
+    propiedades                    shift and go to state 22
+    propiedad                      shift and go to state 23
 
 state 11
 
-    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles . RCONTROLES GUION GUION LLAC
-    (6) controles -> controles . control
-    (8) control -> . RETIQUETA ID PTCOMA
-    (9) control -> . RBOTON ID PTCOMA
-    (10) control -> . RCHECK ID PTCOMA
-    (11) control -> . RRADIOBOTON ID PTCOMA
-    (12) control -> . RTEXTO ID PTCOMA
-    (13) control -> . RAREATEXTO ID PTCOMA
-    (14) control -> . RCLAVE ID PTCOMA
-    (15) control -> . RCONTENEDOR ID PTCOMA
+    (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION . colocaciones RCOLOCACION GUION GUION LLAC
+    (20) colocaciones -> . colocaciones colocacion
+    (21) colocaciones -> . colocacion
+    (22) colocacion -> . ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
 
-    RCONTROLES      shift and go to state 24
-    RETIQUETA       shift and go to state 13
-    RBOTON          shift and go to state 14
-    RCHECK          shift and go to state 15
-    RRADIOBOTON     shift and go to state 16
-    RTEXTO          shift and go to state 17
-    RAREATEXTO      shift and go to state 18
-    RCLAVE          shift and go to state 19
-    RCONTENEDOR     shift and go to state 20
+    ID              shift and go to state 27
 
-    control                        shift and go to state 25
+    colocaciones                   shift and go to state 25
+    colocacion                     shift and go to state 26
 
 state 12
 
-    (7) controles -> control .
+    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles . RCONTROLES GUION GUION LLAC
+    (7) controles -> controles . control
+    (9) control -> . RETIQUETA ID PTCOMA
+    (10) control -> . RBOTON ID PTCOMA
+    (11) control -> . RCHECK ID PTCOMA
+    (12) control -> . RRADIOBOTON ID PTCOMA
+    (13) control -> . RTEXTO ID PTCOMA
+    (14) control -> . RAREATEXTO ID PTCOMA
+    (15) control -> . RCLAVE ID PTCOMA
+    (16) control -> . RCONTENEDOR ID PTCOMA
 
-    RCONTROLES      reduce using rule 7 (controles -> control .)
-    RETIQUETA       reduce using rule 7 (controles -> control .)
-    RBOTON          reduce using rule 7 (controles -> control .)
-    RCHECK          reduce using rule 7 (controles -> control .)
-    RRADIOBOTON     reduce using rule 7 (controles -> control .)
-    RTEXTO          reduce using rule 7 (controles -> control .)
-    RAREATEXTO      reduce using rule 7 (controles -> control .)
-    RCLAVE          reduce using rule 7 (controles -> control .)
-    RCONTENEDOR     reduce using rule 7 (controles -> control .)
+    RCONTROLES      shift and go to state 28
+    RETIQUETA       shift and go to state 14
+    RBOTON          shift and go to state 15
+    RCHECK          shift and go to state 16
+    RRADIOBOTON     shift and go to state 17
+    RTEXTO          shift and go to state 18
+    RAREATEXTO      shift and go to state 19
+    RCLAVE          shift and go to state 20
+    RCONTENEDOR     shift and go to state 21
 
+    control                        shift and go to state 29
 
 state 13
 
-    (8) control -> RETIQUETA . ID PTCOMA
+    (8) controles -> control .
 
-    ID              shift and go to state 26
+    RCONTROLES      reduce using rule 8 (controles -> control .)
+    RETIQUETA       reduce using rule 8 (controles -> control .)
+    RBOTON          reduce using rule 8 (controles -> control .)
+    RCHECK          reduce using rule 8 (controles -> control .)
+    RRADIOBOTON     reduce using rule 8 (controles -> control .)
+    RTEXTO          reduce using rule 8 (controles -> control .)
+    RAREATEXTO      reduce using rule 8 (controles -> control .)
+    RCLAVE          reduce using rule 8 (controles -> control .)
+    RCONTENEDOR     reduce using rule 8 (controles -> control .)
 
 
 state 14
 
-    (9) control -> RBOTON . ID PTCOMA
-
-    ID              shift and go to state 27
-
-
-state 15
-
-    (10) control -> RCHECK . ID PTCOMA
-
-    ID              shift and go to state 28
-
-
-state 16
-
-    (11) control -> RRADIOBOTON . ID PTCOMA
-
-    ID              shift and go to state 29
-
-
-state 17
-
-    (12) control -> RTEXTO . ID PTCOMA
+    (9) control -> RETIQUETA . ID PTCOMA
 
     ID              shift and go to state 30
 
 
-state 18
+state 15
 
-    (13) control -> RAREATEXTO . ID PTCOMA
+    (10) control -> RBOTON . ID PTCOMA
 
     ID              shift and go to state 31
 
 
-state 19
+state 16
 
-    (14) control -> RCLAVE . ID PTCOMA
+    (11) control -> RCHECK . ID PTCOMA
 
     ID              shift and go to state 32
 
 
-state 20
+state 17
 
-    (15) control -> RCONTENEDOR . ID PTCOMA
+    (12) control -> RRADIOBOTON . ID PTCOMA
 
     ID              shift and go to state 33
 
 
+state 18
+
+    (13) control -> RTEXTO . ID PTCOMA
+
+    ID              shift and go to state 34
+
+
+state 19
+
+    (14) control -> RAREATEXTO . ID PTCOMA
+
+    ID              shift and go to state 35
+
+
+state 20
+
+    (15) control -> RCLAVE . ID PTCOMA
+
+    ID              shift and go to state 36
+
+
 state 21
 
-    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades . RPROPIEDADES GUION GUION LLAC
-    (16) propiedades -> propiedades . propiedad
-    (18) propiedad -> . ID PUNTO ID PARA parametros PARC PTCOMA
+    (16) control -> RCONTENEDOR . ID PTCOMA
 
-    RPROPIEDADES    shift and go to state 34
-    ID              shift and go to state 23
+    ID              shift and go to state 37
 
-    propiedad                      shift and go to state 35
 
 state 22
 
-    (17) propiedades -> propiedad .
+    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades . RPROPIEDADES GUION GUION LLAC
+    (17) propiedades -> propiedades . propiedad
+    (19) propiedad -> . ID PUNTO ID PARA parametros PARC PTCOMA
 
-    RPROPIEDADES    reduce using rule 17 (propiedades -> propiedad .)
-    ID              reduce using rule 17 (propiedades -> propiedad .)
+    RPROPIEDADES    shift and go to state 38
+    ID              shift and go to state 24
 
+    propiedad                      shift and go to state 39
 
 state 23
 
-    (18) propiedad -> ID . PUNTO ID PARA parametros PARC PTCOMA
+    (18) propiedades -> propiedad .
 
-    PUNTO           shift and go to state 36
+    RPROPIEDADES    reduce using rule 18 (propiedades -> propiedad .)
+    ID              reduce using rule 18 (propiedades -> propiedad .)
 
 
 state 24
 
-    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES . GUION GUION LLAC
+    (19) propiedad -> ID . PUNTO ID PARA parametros PARC PTCOMA
 
-    GUION           shift and go to state 37
+    PUNTO           shift and go to state 40
 
 
 state 25
 
-    (6) controles -> controles control .
+    (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones . RCOLOCACION GUION GUION LLAC
+    (20) colocaciones -> colocaciones . colocacion
+    (22) colocacion -> . ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
 
-    RCONTROLES      reduce using rule 6 (controles -> controles control .)
-    RETIQUETA       reduce using rule 6 (controles -> controles control .)
-    RBOTON          reduce using rule 6 (controles -> controles control .)
-    RCHECK          reduce using rule 6 (controles -> controles control .)
-    RRADIOBOTON     reduce using rule 6 (controles -> controles control .)
-    RTEXTO          reduce using rule 6 (controles -> controles control .)
-    RAREATEXTO      reduce using rule 6 (controles -> controles control .)
-    RCLAVE          reduce using rule 6 (controles -> controles control .)
-    RCONTENEDOR     reduce using rule 6 (controles -> controles control .)
+    RCOLOCACION     shift and go to state 41
+    ID              shift and go to state 27
 
+    colocacion                     shift and go to state 42
 
 state 26
 
-    (8) control -> RETIQUETA ID . PTCOMA
+    (21) colocaciones -> colocacion .
 
-    PTCOMA          shift and go to state 38
+    RCOLOCACION     reduce using rule 21 (colocaciones -> colocacion .)
+    ID              reduce using rule 21 (colocaciones -> colocacion .)
 
 
 state 27
 
-    (9) control -> RBOTON ID . PTCOMA
+    (22) colocacion -> ID . PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
 
-    PTCOMA          shift and go to state 39
+    PUNTO           shift and go to state 43
 
 
 state 28
 
-    (10) control -> RCHECK ID . PTCOMA
+    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES . GUION GUION LLAC
 
-    PTCOMA          shift and go to state 40
+    GUION           shift and go to state 44
 
 
 state 29
 
-    (11) control -> RRADIOBOTON ID . PTCOMA
+    (7) controles -> controles control .
 
-    PTCOMA          shift and go to state 41
+    RCONTROLES      reduce using rule 7 (controles -> controles control .)
+    RETIQUETA       reduce using rule 7 (controles -> controles control .)
+    RBOTON          reduce using rule 7 (controles -> controles control .)
+    RCHECK          reduce using rule 7 (controles -> controles control .)
+    RRADIOBOTON     reduce using rule 7 (controles -> controles control .)
+    RTEXTO          reduce using rule 7 (controles -> controles control .)
+    RAREATEXTO      reduce using rule 7 (controles -> controles control .)
+    RCLAVE          reduce using rule 7 (controles -> controles control .)
+    RCONTENEDOR     reduce using rule 7 (controles -> controles control .)
 
 
 state 30
 
-    (12) control -> RTEXTO ID . PTCOMA
-
-    PTCOMA          shift and go to state 42
-
-
-state 31
-
-    (13) control -> RAREATEXTO ID . PTCOMA
-
-    PTCOMA          shift and go to state 43
-
-
-state 32
-
-    (14) control -> RCLAVE ID . PTCOMA
-
-    PTCOMA          shift and go to state 44
-
-
-state 33
-
-    (15) control -> RCONTENEDOR ID . PTCOMA
+    (9) control -> RETIQUETA ID . PTCOMA
 
     PTCOMA          shift and go to state 45
 
 
+state 31
+
+    (10) control -> RBOTON ID . PTCOMA
+
+    PTCOMA          shift and go to state 46
+
+
+state 32
+
+    (11) control -> RCHECK ID . PTCOMA
+
+    PTCOMA          shift and go to state 47
+
+
+state 33
+
+    (12) control -> RRADIOBOTON ID . PTCOMA
+
+    PTCOMA          shift and go to state 48
+
+
 state 34
 
-    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES . GUION GUION LLAC
+    (13) control -> RTEXTO ID . PTCOMA
 
-    GUION           shift and go to state 46
+    PTCOMA          shift and go to state 49
 
 
 state 35
 
-    (16) propiedades -> propiedades propiedad .
+    (14) control -> RAREATEXTO ID . PTCOMA
 
-    RPROPIEDADES    reduce using rule 16 (propiedades -> propiedades propiedad .)
-    ID              reduce using rule 16 (propiedades -> propiedades propiedad .)
+    PTCOMA          shift and go to state 50
 
 
 state 36
 
-    (18) propiedad -> ID PUNTO . ID PARA parametros PARC PTCOMA
+    (15) control -> RCLAVE ID . PTCOMA
 
-    ID              shift and go to state 47
+    PTCOMA          shift and go to state 51
 
 
 state 37
 
-    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION . GUION LLAC
+    (16) control -> RCONTENEDOR ID . PTCOMA
 
-    GUION           shift and go to state 48
+    PTCOMA          shift and go to state 52
 
 
 state 38
 
-    (8) control -> RETIQUETA ID PTCOMA .
+    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES . GUION GUION LLAC
 
-    RCONTROLES      reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RETIQUETA       reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RBOTON          reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RCHECK          reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RTEXTO          reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RAREATEXTO      reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RCLAVE          reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 8 (control -> RETIQUETA ID PTCOMA .)
+    GUION           shift and go to state 53
 
 
 state 39
 
-    (9) control -> RBOTON ID PTCOMA .
+    (17) propiedades -> propiedades propiedad .
 
-    RCONTROLES      reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RETIQUETA       reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RBOTON          reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RCHECK          reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RTEXTO          reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RAREATEXTO      reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RCLAVE          reduce using rule 9 (control -> RBOTON ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 9 (control -> RBOTON ID PTCOMA .)
+    RPROPIEDADES    reduce using rule 17 (propiedades -> propiedades propiedad .)
+    ID              reduce using rule 17 (propiedades -> propiedades propiedad .)
 
 
 state 40
 
-    (10) control -> RCHECK ID PTCOMA .
+    (19) propiedad -> ID PUNTO . ID PARA parametros PARC PTCOMA
 
-    RCONTROLES      reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RETIQUETA       reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RBOTON          reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RCHECK          reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RTEXTO          reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RAREATEXTO      reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RCLAVE          reduce using rule 10 (control -> RCHECK ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 10 (control -> RCHECK ID PTCOMA .)
+    ID              shift and go to state 54
 
 
 state 41
 
-    (11) control -> RRADIOBOTON ID PTCOMA .
+    (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION . GUION GUION LLAC
 
-    RCONTROLES      reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RETIQUETA       reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RBOTON          reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RCHECK          reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RTEXTO          reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RAREATEXTO      reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RCLAVE          reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 11 (control -> RRADIOBOTON ID PTCOMA .)
+    GUION           shift and go to state 55
 
 
 state 42
 
-    (12) control -> RTEXTO ID PTCOMA .
+    (20) colocaciones -> colocaciones colocacion .
 
-    RCONTROLES      reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RETIQUETA       reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RBOTON          reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RCHECK          reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RTEXTO          reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RAREATEXTO      reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RCLAVE          reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 12 (control -> RTEXTO ID PTCOMA .)
+    RCOLOCACION     reduce using rule 20 (colocaciones -> colocaciones colocacion .)
+    ID              reduce using rule 20 (colocaciones -> colocaciones colocacion .)
 
 
 state 43
 
-    (13) control -> RAREATEXTO ID PTCOMA .
+    (22) colocacion -> ID PUNTO . ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
 
-    RCONTROLES      reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RETIQUETA       reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RBOTON          reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RCHECK          reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RTEXTO          reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RAREATEXTO      reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RCLAVE          reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 13 (control -> RAREATEXTO ID PTCOMA .)
+    ID              shift and go to state 56
 
 
 state 44
 
-    (14) control -> RCLAVE ID PTCOMA .
+    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION . GUION LLAC
 
-    RCONTROLES      reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RETIQUETA       reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RBOTON          reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RCHECK          reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RTEXTO          reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RAREATEXTO      reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RCLAVE          reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 14 (control -> RCLAVE ID PTCOMA .)
+    GUION           shift and go to state 57
 
 
 state 45
 
-    (15) control -> RCONTENEDOR ID PTCOMA .
+    (9) control -> RETIQUETA ID PTCOMA .
 
-    RCONTROLES      reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RETIQUETA       reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RBOTON          reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RCHECK          reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RRADIOBOTON     reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RTEXTO          reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RAREATEXTO      reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RCLAVE          reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
-    RCONTENEDOR     reduce using rule 15 (control -> RCONTENEDOR ID PTCOMA .)
+    RCONTROLES      reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RETIQUETA       reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RBOTON          reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RCHECK          reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RTEXTO          reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RAREATEXTO      reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RCLAVE          reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 9 (control -> RETIQUETA ID PTCOMA .)
 
 
 state 46
 
-    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION . GUION LLAC
+    (10) control -> RBOTON ID PTCOMA .
 
-    GUION           shift and go to state 49
+    RCONTROLES      reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RETIQUETA       reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RBOTON          reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RCHECK          reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RTEXTO          reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RAREATEXTO      reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RCLAVE          reduce using rule 10 (control -> RBOTON ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 10 (control -> RBOTON ID PTCOMA .)
 
 
 state 47
 
-    (18) propiedad -> ID PUNTO ID . PARA parametros PARC PTCOMA
+    (11) control -> RCHECK ID PTCOMA .
 
-    PARA            shift and go to state 50
+    RCONTROLES      reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RETIQUETA       reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RBOTON          reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RCHECK          reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RTEXTO          reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RAREATEXTO      reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RCLAVE          reduce using rule 11 (control -> RCHECK ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 11 (control -> RCHECK ID PTCOMA .)
 
 
 state 48
 
-    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION . LLAC
+    (12) control -> RRADIOBOTON ID PTCOMA .
 
-    LLAC            shift and go to state 51
+    RCONTROLES      reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RETIQUETA       reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RBOTON          reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RCHECK          reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RTEXTO          reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RAREATEXTO      reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RCLAVE          reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 12 (control -> RRADIOBOTON ID PTCOMA .)
 
 
 state 49
 
-    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION . LLAC
+    (13) control -> RTEXTO ID PTCOMA .
 
-    LLAC            shift and go to state 52
+    RCONTROLES      reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RETIQUETA       reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RBOTON          reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RCHECK          reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RTEXTO          reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RAREATEXTO      reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RCLAVE          reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 13 (control -> RTEXTO ID PTCOMA .)
 
 
 state 50
 
-    (18) propiedad -> ID PUNTO ID PARA . parametros PARC PTCOMA
-    (19) parametros -> . parametros COMA parametro
-    (20) parametros -> . parametro
-    (21) parametro -> . expresion
-    (22) expresion -> . ENTERO
-    (23) expresion -> . DECIMAL
-    (24) expresion -> . CADENA
-    (25) expresion -> . ID
+    (14) control -> RAREATEXTO ID PTCOMA .
 
-    ENTERO          shift and go to state 57
-    DECIMAL         shift and go to state 58
-    CADENA          shift and go to state 59
-    ID              shift and go to state 53
+    RCONTROLES      reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RETIQUETA       reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RBOTON          reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RCHECK          reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RTEXTO          reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RAREATEXTO      reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RCLAVE          reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 14 (control -> RAREATEXTO ID PTCOMA .)
 
-    parametros                     shift and go to state 54
-    parametro                      shift and go to state 55
-    expresion                      shift and go to state 56
 
 state 51
+
+    (15) control -> RCLAVE ID PTCOMA .
+
+    RCONTROLES      reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RETIQUETA       reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RBOTON          reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RCHECK          reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RTEXTO          reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RAREATEXTO      reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RCLAVE          reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 15 (control -> RCLAVE ID PTCOMA .)
+
+
+state 52
+
+    (16) control -> RCONTENEDOR ID PTCOMA .
+
+    RCONTROLES      reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RETIQUETA       reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RBOTON          reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RCHECK          reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RRADIOBOTON     reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RTEXTO          reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RAREATEXTO      reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RCLAVE          reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+    RCONTENEDOR     reduce using rule 16 (control -> RCONTENEDOR ID PTCOMA .)
+
+
+state 53
+
+    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION . GUION LLAC
+
+    GUION           shift and go to state 58
+
+
+state 54
+
+    (19) propiedad -> ID PUNTO ID . PARA parametros PARC PTCOMA
+
+    PARA            shift and go to state 59
+
+
+state 55
+
+    (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION . GUION LLAC
+
+    GUION           shift and go to state 60
+
+
+state 56
+
+    (22) colocacion -> ID PUNTO ID . PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+
+    PARA            shift and go to state 61
+
+
+state 57
+
+    (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION . LLAC
+
+    LLAC            shift and go to state 62
+
+
+state 58
+
+    (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION . LLAC
+
+    LLAC            shift and go to state 63
+
+
+state 59
+
+    (19) propiedad -> ID PUNTO ID PARA . parametros PARC PTCOMA
+    (23) parametros -> . parametros COMA parametro
+    (24) parametros -> . parametro
+    (25) parametro -> . expresion
+    (26) expresion -> . ENTERO
+    (27) expresion -> . DECIMAL
+    (28) expresion -> . CADENA
+    (29) expresion -> . ID
+
+    ENTERO          shift and go to state 68
+    DECIMAL         shift and go to state 69
+    CADENA          shift and go to state 70
+    ID              shift and go to state 64
+
+    parametros                     shift and go to state 65
+    parametro                      shift and go to state 66
+    expresion                      shift and go to state 67
+
+state 60
+
+    (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION . LLAC
+
+    LLAC            shift and go to state 71
+
+
+state 61
+
+    (22) colocacion -> ID PUNTO ID PARA . parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (23) parametros -> . parametros COMA parametro
+    (24) parametros -> . parametro
+    (25) parametro -> . expresion
+    (26) expresion -> . ENTERO
+    (27) expresion -> . DECIMAL
+    (28) expresion -> . CADENA
+    (29) expresion -> . ID
+
+    ENTERO          shift and go to state 68
+    DECIMAL         shift and go to state 69
+    CADENA          shift and go to state 70
+    ID              shift and go to state 64
+
+    parametros                     shift and go to state 72
+    parametro                      shift and go to state 66
+    expresion                      shift and go to state 67
+
+state 62
 
     (4) instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC .
 
@@ -596,7 +711,7 @@ state 51
     $end            reduce using rule 4 (instruccion -> LLAA EXCLAMACION GUION GUION RCONTROLES controles RCONTROLES GUION GUION LLAC .)
 
 
-state 52
+state 63
 
     (5) instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC .
 
@@ -604,99 +719,195 @@ state 52
     $end            reduce using rule 5 (instruccion -> LLAA EXCLAMACION GUION GUION RPROPIEDADES propiedades RPROPIEDADES GUION GUION LLAC .)
 
 
-state 53
+state 64
 
-    (25) expresion -> ID .
+    (29) expresion -> ID .
 
-    PARC            reduce using rule 25 (expresion -> ID .)
-    COMA            reduce using rule 25 (expresion -> ID .)
-
-
-state 54
-
-    (18) propiedad -> ID PUNTO ID PARA parametros . PARC PTCOMA
-    (19) parametros -> parametros . COMA parametro
-
-    PARC            shift and go to state 60
-    COMA            shift and go to state 61
+    PARC            reduce using rule 29 (expresion -> ID .)
+    COMA            reduce using rule 29 (expresion -> ID .)
 
 
-state 55
+state 65
 
-    (20) parametros -> parametro .
+    (19) propiedad -> ID PUNTO ID PARA parametros . PARC PTCOMA
+    (23) parametros -> parametros . COMA parametro
 
-    PARC            reduce using rule 20 (parametros -> parametro .)
-    COMA            reduce using rule 20 (parametros -> parametro .)
-
-
-state 56
-
-    (21) parametro -> expresion .
-
-    PARC            reduce using rule 21 (parametro -> expresion .)
-    COMA            reduce using rule 21 (parametro -> expresion .)
+    PARC            shift and go to state 73
+    COMA            shift and go to state 74
 
 
-state 57
+state 66
 
-    (22) expresion -> ENTERO .
+    (24) parametros -> parametro .
 
-    PARC            reduce using rule 22 (expresion -> ENTERO .)
-    COMA            reduce using rule 22 (expresion -> ENTERO .)
-
-
-state 58
-
-    (23) expresion -> DECIMAL .
-
-    PARC            reduce using rule 23 (expresion -> DECIMAL .)
-    COMA            reduce using rule 23 (expresion -> DECIMAL .)
+    PARC            reduce using rule 24 (parametros -> parametro .)
+    COMA            reduce using rule 24 (parametros -> parametro .)
 
 
-state 59
+state 67
 
-    (24) expresion -> CADENA .
+    (25) parametro -> expresion .
 
-    PARC            reduce using rule 24 (expresion -> CADENA .)
-    COMA            reduce using rule 24 (expresion -> CADENA .)
-
-
-state 60
-
-    (18) propiedad -> ID PUNTO ID PARA parametros PARC . PTCOMA
-
-    PTCOMA          shift and go to state 62
+    PARC            reduce using rule 25 (parametro -> expresion .)
+    COMA            reduce using rule 25 (parametro -> expresion .)
 
 
-state 61
+state 68
 
-    (19) parametros -> parametros COMA . parametro
-    (21) parametro -> . expresion
-    (22) expresion -> . ENTERO
-    (23) expresion -> . DECIMAL
-    (24) expresion -> . CADENA
-    (25) expresion -> . ID
+    (26) expresion -> ENTERO .
 
-    ENTERO          shift and go to state 57
-    DECIMAL         shift and go to state 58
-    CADENA          shift and go to state 59
-    ID              shift and go to state 53
-
-    parametro                      shift and go to state 63
-    expresion                      shift and go to state 56
-
-state 62
-
-    (18) propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA .
-
-    RPROPIEDADES    reduce using rule 18 (propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA .)
-    ID              reduce using rule 18 (propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA .)
+    PARC            reduce using rule 26 (expresion -> ENTERO .)
+    COMA            reduce using rule 26 (expresion -> ENTERO .)
 
 
-state 63
+state 69
 
-    (19) parametros -> parametros COMA parametro .
+    (27) expresion -> DECIMAL .
 
-    PARC            reduce using rule 19 (parametros -> parametros COMA parametro .)
-    COMA            reduce using rule 19 (parametros -> parametros COMA parametro .)
+    PARC            reduce using rule 27 (expresion -> DECIMAL .)
+    COMA            reduce using rule 27 (expresion -> DECIMAL .)
+
+
+state 70
+
+    (28) expresion -> CADENA .
+
+    PARC            reduce using rule 28 (expresion -> CADENA .)
+    COMA            reduce using rule 28 (expresion -> CADENA .)
+
+
+state 71
+
+    (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC .
+
+    LLAA            reduce using rule 6 (instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC .)
+    $end            reduce using rule 6 (instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones RCOLOCACION GUION GUION LLAC .)
+
+
+state 72
+
+    (22) colocacion -> ID PUNTO ID PARA parametros . PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (23) parametros -> parametros . COMA parametro
+
+    PARC            shift and go to state 75
+    COMA            shift and go to state 74
+
+
+state 73
+
+    (19) propiedad -> ID PUNTO ID PARA parametros PARC . PTCOMA
+
+    PTCOMA          shift and go to state 76
+
+
+state 74
+
+    (23) parametros -> parametros COMA . parametro
+    (25) parametro -> . expresion
+    (26) expresion -> . ENTERO
+    (27) expresion -> . DECIMAL
+    (28) expresion -> . CADENA
+    (29) expresion -> . ID
+
+    ENTERO          shift and go to state 68
+    DECIMAL         shift and go to state 69
+    CADENA          shift and go to state 70
+    ID              shift and go to state 64
+
+    parametro                      shift and go to state 77
+    expresion                      shift and go to state 67
+
+state 75
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC . PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+
+    PTCOMA          shift and go to state 78
+
+
+state 76
+
+    (19) propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA .
+
+    RPROPIEDADES    reduce using rule 19 (propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA .)
+    ID              reduce using rule 19 (propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA .)
+
+
+state 77
+
+    (23) parametros -> parametros COMA parametro .
+
+    PARC            reduce using rule 23 (parametros -> parametros COMA parametro .)
+    COMA            reduce using rule 23 (parametros -> parametros COMA parametro .)
+
+
+state 78
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA . ID PUNTO ID PARA parametros PARC PTCOMA
+
+    ID              shift and go to state 79
+
+
+state 79
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID . PUNTO ID PARA parametros PARC PTCOMA
+
+    PUNTO           shift and go to state 80
+
+
+state 80
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO . ID PARA parametros PARC PTCOMA
+
+    ID              shift and go to state 81
+
+
+state 81
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID . PARA parametros PARC PTCOMA
+
+    PARA            shift and go to state 82
+
+
+state 82
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA . parametros PARC PTCOMA
+    (23) parametros -> . parametros COMA parametro
+    (24) parametros -> . parametro
+    (25) parametro -> . expresion
+    (26) expresion -> . ENTERO
+    (27) expresion -> . DECIMAL
+    (28) expresion -> . CADENA
+    (29) expresion -> . ID
+
+    ENTERO          shift and go to state 68
+    DECIMAL         shift and go to state 69
+    CADENA          shift and go to state 70
+    ID              shift and go to state 64
+
+    parametros                     shift and go to state 83
+    parametro                      shift and go to state 66
+    expresion                      shift and go to state 67
+
+state 83
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros . PARC PTCOMA
+    (23) parametros -> parametros . COMA parametro
+
+    PARC            shift and go to state 84
+    COMA            shift and go to state 74
+
+
+state 84
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC . PTCOMA
+
+    PTCOMA          shift and go to state 85
+
+
+state 85
+
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA .
+
+    RCOLOCACION     reduce using rule 22 (colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA .)
+    ID              reduce using rule 22 (colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA .)
 
