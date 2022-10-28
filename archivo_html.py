@@ -63,6 +63,7 @@ class Etiqueta:
     height:'''+str(self.Alto)+'''px;
     color: rgb('''+str(self.Co_r)+''','''+str(self.Co_g)+''','''+str(self.Co_b)+''');
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
 
@@ -76,6 +77,7 @@ class Etiqueta:
     height:'''+str(self.Alto)+'''px;
     color: rgb('''+str(self.Co_r)+''','''+str(self.Co_g)+''','''+str(self.Co_b)+''');
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
     def set_Color_Letra(self,r,g,b):
@@ -90,6 +92,7 @@ class Etiqueta:
     height:'''+str(self.Alto)+'''px;
     color: rgb('''+str(self.Co_r)+''','''+str(self.Co_g)+''','''+str(self.Co_b)+''');
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
 
@@ -105,6 +108,7 @@ class Etiqueta:
     height:'''+str(self.Alto)+'''px;
     color: rgb('''+str(self.Co_r)+''','''+str(self.Co_g)+''','''+str(self.Co_b)+''');
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
     def set_Posicion(self,left,top):
@@ -118,13 +122,15 @@ class Etiqueta:
     height:'''+str(self.Alto)+'''px;
     color: rgb('''+str(self.Co_r)+''','''+str(self.Co_g)+''','''+str(self.Co_b)+''');
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
 
     def set_Texto(self,Texto):
         self.Texto=Texto
         self.etiqueta=f'<label id="{self.id}">{self.Texto}</label>' 
-
+    def borrar_etiqueta(self):
+        self.etiqueta=""
 
 
 class Boton:
@@ -166,6 +172,7 @@ class Boton:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
     def set_Posicion(self,left,top):
@@ -177,9 +184,11 @@ class Boton:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
-
+    def borrar_etiqueta(self):
+        self.etiqueta=""
 
 class Check:
     Texto=""
@@ -220,6 +229,7 @@ class Check:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
     def set_Posicion(self,left,top):
@@ -231,8 +241,11 @@ class Check:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
+    def borrar_etiqueta(self):
+        self.etiqueta=""    
 
 class RadioBoton:
     clase=""
@@ -274,6 +287,7 @@ class RadioBoton:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     }'''
 
     def set_Posicion(self,left,top):
@@ -285,8 +299,11 @@ class RadioBoton:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
+    def borrar_etiqueta(self):
+        self.etiqueta=""
 
 class Texto:
     clase=""
@@ -317,6 +334,7 @@ class Texto:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
     def set_Posicion(self,left,top):
@@ -328,8 +346,12 @@ class Texto:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''    
+    def borrar_etiqueta(self):
+        self.etiqueta=""
+
 
 class AreaTexto:
     clase=""
@@ -355,6 +377,7 @@ class AreaTexto:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''     
     def set_Posicion(self,left,top):
@@ -366,9 +389,11 @@ class AreaTexto:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
-
+    def borrar_etiqueta(self):
+        self.etiqueta=""
 
 
 class Clave:
@@ -401,6 +426,7 @@ class Clave:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
     def set_Posicion(self,left,top):
@@ -412,9 +438,11 @@ class Clave:
     left:'''+str(self.left)+'''px; 
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
+    font-size: 12px;
     } 
     '''
-
+    def borrar_etiqueta(self):
+        self.etiqueta=""
 
 class Contendor:
     clase=""
@@ -434,9 +462,10 @@ class Contendor:
 
     def borrar_etiqueta(self):
         self.etiqueta=""
-        
+    etiquetas_interiores=""    
     def insertar_etiqueta(self,eti):
-        self.etiqueta=f'<div id="{self.id}">\n{eti}\n</div>'
+        self.etiquetas_interiores+=eti+"\n"
+        self.etiqueta=f'<div id="{self.id}">\n{self.etiquetas_interiores}\n</div>'
 
     def set_Ancho(self,ancho):
         self.Ancho=str(ancho)
@@ -447,6 +476,7 @@ class Contendor:
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
 
@@ -459,6 +489,7 @@ class Contendor:
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
 
@@ -473,6 +504,7 @@ class Contendor:
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''
 
@@ -486,5 +518,6 @@ class Contendor:
     width:'''+str(self.Ancho)+'''px;
     height:'''+str(self.Alto)+'''px;
     background-color: rgb('''+str(self.bg_r)+''','''+str(self.bg_g)+''','''+str(self.bg_b)+''');
+    font-size: 12px;
     } 
     '''    

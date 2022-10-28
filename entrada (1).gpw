@@ -10,8 +10,6 @@ Contenedor contlogo2;
 Contenedor ContLogo1;
 Contenedor ContBody;
 Controles -->
-
-
 <!--Propiedades
 /*
 Definicion de propiedades
@@ -27,7 +25,8 @@ cmdIngresar.setTexto("SALIR");
 
 pswClave.setTexto("");
 
-passw.setAncho(53); passw.setAlto(13 );
+passw.setAncho(53); 
+passw.setAlto(13);
 passw.setColorLetra(128,128,128);
 passw.setTexto("Password");
 
@@ -49,39 +48,39 @@ ContBody.setAlto(300);
 ContBody.setColorFondo(90,90,90);
 
 Propiedades -->
-
 <!--Colocacion
 /*
 Posicionamiento de los controles
 */
-
-contlogin.add("Nombre");
-contlogin.add("Texto0");
-contlogin.add("cmdIngresar");
-contlogin.add("passw");
-contlogin.add("pswClave");
-
-ContBody.add("contlogin");
-ContBody.add("contlogo2");
-ContBody.add("ContLogo1");
-
 contFondo.setPosicion(25,330);
 this.add("contFondo");
 contlogin.setPosicion(586,110);
-
+ContBody.add("contlogin");
 passw.setPosicion(11,54);
-
+contlogin.add("passw");
 cmdIngresar.setPosicion(40,100);
 pswClave.setPosicion(67,48);
-
+contlogin.add("pswClave");
 Nombre.setPosicion(8,21);
-
+contlogin.add("Nombre");
 Texto0.setPosicion(65,20);
-
+contlogin.add("Texto0");
+contlogin.add("cmdIngresar");
 contlogo2.setPosicion(88,25);
-
+ContBody.add("contlogo2");
 ContLogo1.setPosicion(36,25);
-
+ContBody.add("ContLogo1");
 ContBody.setPosicion(23,21);
 this.add("ContBody");
 Colocacion -->
+
+
+
+
+
+
+
+
+
+
+

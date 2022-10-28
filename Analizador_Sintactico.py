@@ -372,6 +372,7 @@ def p_instrucciones_colocaciones(t):
                 componente_principal=encontrar_componente(t[1])
                 componente_secundario=encontrar_componente(t[5][0].valor)
                 componente_principal.insertar_etiqueta(componente_secundario.etiqueta)
+                
 
 
                 
