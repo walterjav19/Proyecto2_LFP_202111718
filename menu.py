@@ -4,8 +4,8 @@ from tkinter import messagebox
 from tkinter.font import Font
 import webbrowser as wb
 import math
-
-from Analizador_Sintactico import parse,errores_,lista_objetos_tokens
+from archivo_html import HTML_Archivo,Archivo_CSS
+from Analizador_Sintactico import parse,errores_,lista_objetos_tokens,componentes
 from Analizador_Lexico import actualizar_entrada
 #from analizador import parse,errores_,actualizar_entrada
 
@@ -79,14 +79,31 @@ def Archivo():
     def analizar():
         errores_.clear()
         lista_objetos_tokens.clear()
+        componentes.clear()
         actualizar_entrada(entry.get(1.0,"end"))
         variable =parse(entry.get(1.0,"end"))
-        for error in errores_:
-            print(error.toString())
 
-        for token in lista_objetos_tokens:
-            print(token.toString())    
-        #actualizar_texto(entry.get(1.0,"end"))
+
+        
+        archivo=HTML_Archivo()
+        for comp in componentes:
+            archivo.set_cuerpo(comp.etiqueta)
+
+        archivo.crear_archivo()    
+
+
+        archivo_css=Archivo_CSS()
+        for comp in componentes:
+            archivo_css.set_contenido(comp.clase)
+
+        archivo_css.crear_archivo() 
+
+        #for error in errores_:
+            #print(error.toString())
+
+        #for token in lista_objetos_tokens:
+            #print(token.toString())
+        #messagebox.showinfo("Aviso","Revise su carpeta archivos creados")        
     btnEliminar=tkinter.Button(gestionar,text="Analizar",command=analizar)
     btnEliminar.place(x=720,y=450)
     btnEliminar=tkinter.Button(gestionar,text="errores",command=generar_repo)

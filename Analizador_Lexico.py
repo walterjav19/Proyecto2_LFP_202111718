@@ -12,7 +12,7 @@ reserved = {
     'Etiqueta'         : 'RETIQUETA',
     'Boton'            : 'RBOTON',
     'Check'            : 'RCHECK',
-    'RadioButton'      : 'RRADIOBUTTON',
+    'RadioBoton'      : 'RRADIOBOTON',
     'Texto'            : 'RTEXTO',
     'AreaTexto'        : 'RAREATEXTO',
     'Clave'             : 'RCLAVE',

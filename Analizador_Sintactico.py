@@ -83,11 +83,14 @@ def p_controles_2(t):
 lista_objetos_controles=[]
 lista_objetos_tokens=[]
 componentes=[]
+
+
+
 def p_instrucciones_controles(t):
     '''control : RETIQUETA ID PTCOMA
                 | RBOTON ID PTCOMA
                 | RCHECK ID PTCOMA
-                | RRADIOBUTTON ID PTCOMA
+                | RRADIOBOTON ID PTCOMA
                 | RTEXTO ID PTCOMA
                 | RAREATEXTO ID PTCOMA
                 | RCLAVE ID PTCOMA
@@ -164,12 +167,129 @@ def p_propiedades_2(t):
     else:
         t[0] = [t[1]]
 
+
+def encontrar_componente(id):
+    for comp in componentes:
+        if comp.id==id:
+            return comp
 def p_instrucciones_propiedades(t):
     '''propiedad : ID PUNTO ID PARA parametros PARC PTCOMA
                 '''
     #print('ID: ', t[1], ' Propiedad: ', t[3], ' Parametros: ', t[5])
     parametros=t[5]
     print(t[1],t[2],t[3],t[4],t[6],t[7])# Nombre . setColorLetra ( ) ;
+    if encontrar_componente(t[1])==None:
+        objeto_error=Errores(t[1],'Error Sintactico',"N/A",t.lineno(1))
+        errores_.append(objeto_error)
+    else:    
+        comp=encontrar_componente(t[1])
+        if type(comp)==Etiqueta:
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)
+                elif t[3]=="setAncho":
+                    comp.set_Ancho(t[5][0].valor)
+                elif t[3]=="setAlto":
+                    comp.set_Alto(t[5][0].valor)
+                elif t[3]=="setColorFondo":
+                    comp.set_Color(t[5][0].valor,t[5][1].valor,t[5][2].valor)
+                    #print(t[5][0].valor,t[5][1].valor,t[5][2].valor)
+                elif t[3]=="setColorLetra":
+                    comp.set_Color_Letra(t[5][0].valor,t[5][1].valor,t[5][2].valor)
+                    #print(t[5][0].valor,t[5][1].valor,t[5][2].valor)
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)      
+        elif type(comp)==Boton:
+            comp.iniciar_clase()
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)
+                elif t[3]=="setAlineacion":
+                    #print(t[5][0].valor)
+                    comp.set_Text_Align(t[5][0].valor)
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)      
+        elif type(comp)==Check:
+            comp.iniciar_clase()
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)
+                elif t[3]=="setMarcada":
+                    #print(t[5][0].valor)
+                    comp.set_Marcada(t[5][0].valor)
+                elif t[3]=="setGrupo":
+                    #print(t[5][0].valor)
+                    comp.set_Group(t[5][0].valor)    
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)  
+        elif type(comp)==RadioBoton:
+            comp.iniciar_clase()
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)
+                elif t[3]=="setMarcada":
+                    #print(t[5][0].valor)
+                    comp.set_Marcada(t[5][0].valor)
+                elif t[3]=="setGrupo":
+                    #print(t[5][0].valor)
+                    comp.set_Group(t[5][0].valor)    
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)
+        elif type(comp)==Texto:
+            comp.iniciar_clase()
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)
+                elif t[3]=="setAlineacion":
+                    #print(t[5][0].valor)
+                    comp.set_Text_Align(t[5][0].valor)
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)   
+        elif type(comp)==AreaTexto:
+            comp.iniciar_clase()
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)                    
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)  
+        elif type(comp)==Clave:
+            comp.iniciar_clase()
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)
+                elif t[3]=="setAlineacion":
+                    #print(t[5][0].valor)
+                    comp.set_Text_Align(t[5][0].valor)
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)
+        elif type(comp)==Contendor:
+            if t[3] in comp.propiedades:
+                if t[3]=="setTexto":
+                    comp.set_Texto(t[5][0].valor)
+                elif t[3]=="setAncho":
+                    comp.set_Ancho(t[5][0].valor)
+                elif t[3]=="setAlto":
+                    comp.set_Alto(t[5][0].valor)
+                elif t[3]=="setColorFondo":
+                    comp.set_Color(t[5][0].valor,t[5][1].valor,t[5][2].valor)
+                    #print(t[5][0].valor,t[5][1].valor,t[5][2].valor)
+            else:
+               objeto_error=Errores(t[3],'Error Sintactico',"N/A",t.lineno(1))
+               errores_.append(objeto_error)     
+   
+
+
+
+
+
+
     a=Token('Id',t[1])
     lista_objetos_tokens.append(a)
     a=Token('Punto',t[2])
@@ -190,6 +310,14 @@ def p_instrucciones_propiedades(t):
         elif para.tipo==TIPO.STRING:   
             tkn=Token('STRING',para.valor)
             lista_objetos_tokens.append(tkn)
+
+
+    #parte de setear los valores 
+
+
+
+
+
     t[0] = t[1]
 
 

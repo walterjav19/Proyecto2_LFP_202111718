@@ -36,6 +36,7 @@ contFondo.setColorFondo(64,64,64);
 
 // Inicio de cmdIngresar
 cmdIngresar.setTexto("Ingresar");
+cmdIngresar.setAlineacion("Center");
 
 // Inicio de pswClave
 pswClave.setTexto("");
@@ -51,6 +52,7 @@ Nombre.setAncho(44);
 Nombre.setAlto(13);
 Nombre.setColorLetra(128,128,128);
 Nombre.setTexto("Nombre");
+
 
 // Inicio de Texto0
 Texto0.setTexto("");
@@ -71,5 +73,6 @@ ContBody.setAlto(300);
 ContBody.setColorFondo(64,224,208);
 
 Propiedades -->
+
 
 

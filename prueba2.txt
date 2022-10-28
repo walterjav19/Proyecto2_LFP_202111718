@@ -1,0 +1,22 @@
+<!-- Controles
+
+Check var1;
+RadioBoton var2;
+AreaTexto var3;
+
+Controles -->
+
+<!-- Propiedades 
+
+var1.setTexto("opcion1");
+var1.setMarcada("true");
+var1.setGrupo("prueba");
+
+var2.setTexto("opcion1");
+var2.setMarcada("true");
+var2.setGrupo("prueba");
+
+var3.setTexto("bienvenidos a disney");
+
+Propiedades -->
+
