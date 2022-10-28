@@ -432,6 +432,9 @@ class Contendor:
     def crear_etiqueta(self):
         self.etiqueta=f'<div id="{self.id}"></div>'
 
+    def borrar_etiqueta(self):
+        self.etiqueta=""
+        
     def insertar_etiqueta(self,eti):
         self.etiqueta=f'<div id="{self.id}">\n{eti}\n</div>'
 

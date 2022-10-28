@@ -24,7 +24,7 @@ Rule 18    propiedades -> propiedad
 Rule 19    propiedad -> ID PUNTO ID PARA parametros PARC PTCOMA
 Rule 20    colocaciones -> colocaciones colocacion
 Rule 21    colocaciones -> colocacion
-Rule 22    colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+Rule 22    colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA
 Rule 23    parametros -> parametros COMA parametro
 Rule 24    parametros -> parametro
 Rule 25    parametro -> expresion
@@ -41,13 +41,13 @@ DECIMAL              : 27
 ENTERO               : 26
 EXCLAMACION          : 4 5 6
 GUION                : 4 4 4 4 5 5 5 5 6 6 6 6
-ID                   : 9 10 11 12 13 14 15 16 19 19 22 22 22 22 29
+ID                   : 9 10 11 12 13 14 15 16 19 19 22 22 29
 LLAA                 : 4 5 6
 LLAC                 : 4 5 6
-PARA                 : 19 22 22
-PARC                 : 19 22 22
-PTCOMA               : 9 10 11 12 13 14 15 16 19 22 22
-PUNTO                : 19 22 22
+PARA                 : 19 22
+PARC                 : 19 22
+PTCOMA               : 9 10 11 12 13 14 15 16 19 22
+PUNTO                : 19 22
 RAREATEXTO           : 14
 RBOTON               : 10
 RCHECK               : 11
@@ -72,7 +72,7 @@ init                 : 0
 instruccion          : 2 3
 instrucciones        : 1 2
 parametro            : 23 24
-parametros           : 19 22 22 23
+parametros           : 19 22 23
 propiedad            : 17 18
 propiedades          : 5 17
 
@@ -210,7 +210,7 @@ state 11
     (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION . colocaciones RCOLOCACION GUION GUION LLAC
     (20) colocaciones -> . colocaciones colocacion
     (21) colocaciones -> . colocacion
-    (22) colocacion -> . ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> . ID PUNTO ID PARA parametros PARC PTCOMA
 
     ID              shift and go to state 27
 
@@ -343,7 +343,7 @@ state 25
 
     (6) instruccion -> LLAA EXCLAMACION GUION GUION RCOLOCACION colocaciones . RCOLOCACION GUION GUION LLAC
     (20) colocaciones -> colocaciones . colocacion
-    (22) colocacion -> . ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> . ID PUNTO ID PARA parametros PARC PTCOMA
 
     RCOLOCACION     shift and go to state 41
     ID              shift and go to state 27
@@ -360,7 +360,7 @@ state 26
 
 state 27
 
-    (22) colocacion -> ID . PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> ID . PUNTO ID PARA parametros PARC PTCOMA
 
     PUNTO           shift and go to state 43
 
@@ -482,7 +482,7 @@ state 42
 
 state 43
 
-    (22) colocacion -> ID PUNTO . ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> ID PUNTO . ID PARA parametros PARC PTCOMA
 
     ID              shift and go to state 56
 
@@ -637,7 +637,7 @@ state 55
 
 state 56
 
-    (22) colocacion -> ID PUNTO ID . PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> ID PUNTO ID . PARA parametros PARC PTCOMA
 
     PARA            shift and go to state 61
 
@@ -685,7 +685,7 @@ state 60
 
 state 61
 
-    (22) colocacion -> ID PUNTO ID PARA . parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> ID PUNTO ID PARA . parametros PARC PTCOMA
     (23) parametros -> . parametros COMA parametro
     (24) parametros -> . parametro
     (25) parametro -> . expresion
@@ -786,7 +786,7 @@ state 71
 
 state 72
 
-    (22) colocacion -> ID PUNTO ID PARA parametros . PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> ID PUNTO ID PARA parametros . PARC PTCOMA
     (23) parametros -> parametros . COMA parametro
 
     PARC            shift and go to state 75
@@ -819,7 +819,7 @@ state 74
 
 state 75
 
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC . PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC . PTCOMA
 
     PTCOMA          shift and go to state 78
 
@@ -842,72 +842,8 @@ state 77
 
 state 78
 
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA . ID PUNTO ID PARA parametros PARC PTCOMA
+    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA .
 
-    ID              shift and go to state 79
-
-
-state 79
-
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID . PUNTO ID PARA parametros PARC PTCOMA
-
-    PUNTO           shift and go to state 80
-
-
-state 80
-
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO . ID PARA parametros PARC PTCOMA
-
-    ID              shift and go to state 81
-
-
-state 81
-
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID . PARA parametros PARC PTCOMA
-
-    PARA            shift and go to state 82
-
-
-state 82
-
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA . parametros PARC PTCOMA
-    (23) parametros -> . parametros COMA parametro
-    (24) parametros -> . parametro
-    (25) parametro -> . expresion
-    (26) expresion -> . ENTERO
-    (27) expresion -> . DECIMAL
-    (28) expresion -> . CADENA
-    (29) expresion -> . ID
-
-    ENTERO          shift and go to state 68
-    DECIMAL         shift and go to state 69
-    CADENA          shift and go to state 70
-    ID              shift and go to state 64
-
-    parametros                     shift and go to state 83
-    parametro                      shift and go to state 66
-    expresion                      shift and go to state 67
-
-state 83
-
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros . PARC PTCOMA
-    (23) parametros -> parametros . COMA parametro
-
-    PARC            shift and go to state 84
-    COMA            shift and go to state 74
-
-
-state 84
-
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC . PTCOMA
-
-    PTCOMA          shift and go to state 85
-
-
-state 85
-
-    (22) colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA .
-
-    RCOLOCACION     reduce using rule 22 (colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA .)
-    ID              reduce using rule 22 (colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA .)
+    RCOLOCACION     reduce using rule 22 (colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA .)
+    ID              reduce using rule 22 (colocacion -> ID PUNTO ID PARA parametros PARC PTCOMA .)
 

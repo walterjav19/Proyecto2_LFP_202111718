@@ -103,7 +103,7 @@ def Archivo():
 
         #for token in lista_objetos_tokens:
             #print(token.toString())
-        #messagebox.showinfo("Aviso","Revise su carpeta archivos creados")        
+        messagebox.showinfo("Aviso","Revise su carpeta archivos creados")        
     btnEliminar=tkinter.Button(gestionar,text="Analizar",command=analizar)
     btnEliminar.place(x=720,y=450)
     btnEliminar=tkinter.Button(gestionar,text="errores",command=generar_repo)

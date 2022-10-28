@@ -339,24 +339,46 @@ def p_colocaciones_2(t):
 
 
 def p_instrucciones_colocaciones(t):
-    '''colocacion : ID PUNTO ID PARA parametros PARC PTCOMA ID PUNTO ID PARA parametros PARC PTCOMA
+    '''colocacion : ID PUNTO ID PARA parametros PARC PTCOMA
                  '''
     #print('ID: ', t[1], ' Propiedad: ', t[3], ' Parametros: ', t[5])             
-    print(t[1],t[2],t[3],t[4],t[6],t[7])
-    print(t[8],t[9],t[10],t[11],t[13],t[14])
-    parametros1=t[5]
-    parametros2=t[12]
-    if encontrar_componente(t[1])==None:
+    #print(t[1],t[2],t[3],t[4],t[6],t[7])
+
+    a=Token('Id',t[1])
+    lista_objetos_tokens.append(a)
+    a=Token('Punto',t[2])
+    lista_objetos_tokens.append(a)
+    a=Token('Propiedad',t[3])
+    lista_objetos_tokens.append(a)
+    a=Token('PARA',t[4])
+    lista_objetos_tokens.append(a)
+    a=Token('PARC',t[6])
+    lista_objetos_tokens.append(a)
+    a=Token('Punto y Coma',t[7])
+    lista_objetos_tokens.append(a)        
+
+
+
+
+    if encontrar_componente(t[1])!=None or encontrar_componente(t[1])!="this":
+        if t[3]=="setPosicion":
+            componente=encontrar_componente(t[1])
+            componente.set_Posicion(t[5][0].valor,t[5][1].valor)
+        else:#cuando el slice es add
+            if t[1]=="this":
+                print("aqui hay this")
+
+            else:
+                componente_principal=encontrar_componente(t[1])
+                componente_secundario=encontrar_componente(t[5][0].valor)
+                componente_principal.insertar_etiqueta(componente_secundario.etiqueta)
+
+
+                
+    else:
         objeto_error=Errores(t[1],'Error Sintactico',"N/A",t.lineno(1))
         errores_.append(objeto_error)
-    else:
-        comp=encontrar_componente(t[1])
-        if t[3] =="setPosicion":
-            #print(t[5][0].valor,t[5][1].valor)
-            comp.set_Posicion(t[5][0].valor,t[5][1].valor)
-        else:
-            objeto_error=Errores(t[1],'Error Sintactico',"N/A",t.lineno(1))
-            errores_.append(objeto_error)              
+                
 
 
 

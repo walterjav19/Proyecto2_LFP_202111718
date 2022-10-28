@@ -79,6 +79,8 @@ Propiedades -->
 contLogin.setPosicion(65,20);
 this.add("hola");
 
+contFondo.setPosicion(100,40);
+contFondo.add("contLogin");
 
 Colocacion --> 
 
