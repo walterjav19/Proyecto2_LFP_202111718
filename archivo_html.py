@@ -13,6 +13,8 @@ class HTML_Archivo:
 </html>'''
 
 
+
+
     def set_cuerpo(self,etiqueta):
         self.cuerpo+=etiqueta+"\n"
 
@@ -462,7 +464,9 @@ class Contendor:
 
     def borrar_etiqueta(self):
         self.etiqueta=""
-    etiquetas_interiores=""    
+        
+    etiquetas_interiores=""
+        
     def insertar_etiqueta(self,eti):
         self.etiquetas_interiores+=eti+"\n"
         self.etiqueta=f'<div id="{self.id}">\n{self.etiquetas_interiores}\n</div>'

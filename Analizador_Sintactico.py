@@ -337,7 +337,7 @@ def p_colocaciones_2(t):
     else:
         t[0] = [t[1]]
 
-
+cuerpo_html=""
 def p_instrucciones_colocaciones(t):
     '''colocacion : ID PUNTO ID PARA parametros PARC PTCOMA
                  '''
@@ -367,11 +367,13 @@ def p_instrucciones_colocaciones(t):
         else:#cuando el slice es add
             if t[1]=="this":
                 print("aqui hay this")
-
+                com=encontrar_componente(t[5][0].valor)
+                #print(com.etiqueta)
             else:
                 componente_principal=encontrar_componente(t[1])
                 componente_secundario=encontrar_componente(t[5][0].valor)
                 componente_principal.insertar_etiqueta(componente_secundario.etiqueta)
+                #print(componente_principal.etiqueta)
                 
 
 

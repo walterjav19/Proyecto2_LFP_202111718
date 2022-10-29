@@ -4,7 +4,7 @@ from tkinter import messagebox
 from tkinter.font import Font
 import webbrowser as wb
 import math
-from archivo_html import HTML_Archivo,Archivo_CSS
+from archivo_html import Contendor, HTML_Archivo,Archivo_CSS
 from Analizador_Sintactico import parse,errores_,lista_objetos_tokens,componentes
 from Analizador_Lexico import actualizar_entrada
 #from analizador import parse,errores_,actualizar_entrada
@@ -87,6 +87,7 @@ def Archivo():
         
         archivo=HTML_Archivo()
         for comp in componentes:
+            #print(comp.etiqueta)
             archivo.set_cuerpo(comp.etiqueta)
 
         archivo.crear_archivo()    
@@ -94,6 +95,7 @@ def Archivo():
 
         archivo_css=Archivo_CSS()
         for comp in componentes:
+            #print(comp.clase)
             archivo_css.set_contenido(comp.clase)
 
         archivo_css.crear_archivo() 

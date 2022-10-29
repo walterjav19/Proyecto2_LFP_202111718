@@ -5,3 +5,4 @@ class Token:
 
     def toString(self):
         return f"====Token===\ntoken: {self.token}\nlexema: {self.lexema}"
+        
